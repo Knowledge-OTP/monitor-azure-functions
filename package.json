@@ -1,8 +1,8 @@
 {
-  "name": "monitor-azure-func",
+  "name": "azureFuncMonitorManager",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "azureFuncMonitorManager.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
