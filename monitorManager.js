@@ -23,11 +23,13 @@
 //     }
 // }
 
-var MonitorManager = function(){
+var _monitorManager;
+
+var Monitoring = function () {
     this.monitorData={};
 };
 
-MonitorManager.prototype.log = function (functionName,invokedTime,isSuceess){
+Monitoring.prototype.log = function (functionName,invokedTime,isSuceess){
     this.monitorData[functionName] = {
         function_name: functionName,
         last_invoke: invokedTime,
@@ -35,8 +37,30 @@ MonitorManager.prototype.log = function (functionName,invokedTime,isSuceess){
     }
 }
 
-MonitorManager.prototype.get = function (){
+Monitoring.prototype.get = function (){
     return (JSON.stringify(this.monitorData));
 }
+
+var MonitorManager = function(){
+    if (_monitorManager){
+        _monitorManager = new Monitoring();
+    }
+    else{
+        return _monitorManager;
+    }
+    
+};
+
+// MonitorManager.prototype.log = function (functionName,invokedTime,isSuceess){
+//     this.monitorData[functionName] = {
+//         function_name: functionName,
+//         last_invoke: invokedTime,
+//         suceess: isSuceess
+//     }
+// }
+
+// MonitorManager.prototype.get = function (){
+//     return (JSON.stringify(this.monitorData));
+// }
 
 module.exports = MonitorManager;
