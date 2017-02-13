@@ -13,7 +13,7 @@ Monitoring.prototype.log = function (functionName,invokedTime,isSuceess){
 }
 
 Monitoring.prototype.get = function (){
-    return (JSON.stringify(this.monitorData));
+    return (this.monitorData);
 }
 
 var monitorManager = function(){
