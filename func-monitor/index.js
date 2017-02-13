@@ -17,7 +17,7 @@ module.exports = function (azureContext, data) {
         };
     }
     else {
-        context.res = {
+        azureContext.res = {
             status: 400,
             body: { error: 'Please pass name property in the input object'}
         };
