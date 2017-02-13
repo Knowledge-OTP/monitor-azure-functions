@@ -1,4 +1,4 @@
-var MonitorManager = require( '../monitorManager.js');
+var MonitorManager = require('../monitorManager.js');
 
 module.exports = function (azureContext) {
 

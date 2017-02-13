@@ -1,4 +1,4 @@
-var MonitorManager = require( '../monitorManager.js');
+var MonitorManager = require('../monitorManager.js');
 const path = require('path');
 
 module.exports = function (azureContext, data) {
@@ -10,7 +10,7 @@ module.exports = function (azureContext, data) {
     azureContext.log(functionName + ' was triggered !!!');
     
 	
-   azureContext.log('Getting monitor data');
+    azureContext.log('Getting monitor data');
     var msg = monitorManager.get();
     monitorManager.log(functionName,timeStamp, true);
     azureContext.res = {
