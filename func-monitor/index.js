@@ -1,4 +1,6 @@
 var MonitorManager = require( '../monitorManager.js');
+const path = require('path');
+const TOKEN = 'abcdfdsfs334asfdgvsdkdjf@#4sdadf^523423432sdfl';
 
 module.exports = function (azureContext, data) {
 
@@ -6,22 +8,32 @@ module.exports = function (azureContext, data) {
     var monitorManager = MonitorManager();
    
     azureContext.log('dir name=' + __dirname);
-    azureContext.log('func-monitor was triggered !!!');
+    var functionName = path.basename(__dirname);
+    azureContext.log('functionName=' + functionName);
+    azureContext.log(functionName + ' was triggered !!!');
     monitorManager.log('func-monitor',timeStamp, true);
 
-	if('name' in data ) {
-		azureContext.log('name is in data');
-        azureContext.log('Getting monitor data');
-		var msg = monitorManager.get();
-        azureContext.res = {
-            status: 200,
-            body: msg
-        };
+	if('token' in data ) {
+		azureContext.log('got token');
+        if (token===TOKEN){
+           azureContext.log('Getting monitor data');
+            var msg = monitorManager.get();
+            azureContext.res = {
+                status: 200,
+                body: msg
+            }; 
+        }
+        else {
+            azureContext.res = {
+                status: 401,
+                body: { error: 'invalid token'}
+            };
+        }
     }
     else {
         azureContext.res = {
-            status: 400,
-            body: { error: 'Please pass name property in the input object'}
+            status: 401,
+            body: { error: 'invalid token'}
         };
     }
 
