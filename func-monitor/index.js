@@ -3,7 +3,7 @@ var MonitorManager = require( '../monitorManager.js');
 module.exports = function (azureContext, data) {
 
     var timeStamp = new Date().toISOString();
-    var monitorManager = new MonitorManager();
+    var monitorManager = MonitorManager();
    
     azureContext.log(JSON.stringify(azureContext));
     azureContext.log('func-monitor was triggered !!!');

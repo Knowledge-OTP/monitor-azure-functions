@@ -51,16 +51,4 @@ var MonitorManager = function(){
     
 };
 
-// MonitorManager.prototype.log = function (functionName,invokedTime,isSuceess){
-//     this.monitorData[functionName] = {
-//         function_name: functionName,
-//         last_invoke: invokedTime,
-//         suceess: isSuceess
-//     }
-// }
-
-// MonitorManager.prototype.get = function (){
-//     return (JSON.stringify(this.monitorData));
-// }
-
 module.exports = MonitorManager;
