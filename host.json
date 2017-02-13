@@ -4,6 +4,5 @@
     "tracing": {
       "consoleLevel": "verbose",
       "fileLoggingMode": "always"
-
     }
 }
