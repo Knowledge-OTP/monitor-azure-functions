@@ -1,4 +1,4 @@
-(function (process) {
+(function () {
 
 	var MonitorManager = require('./monitorManager.js');
 	const path = require('path');
@@ -17,4 +17,4 @@
         logFunctionExecution : logFunctionExecution
     };
 
-})(process);
+})();

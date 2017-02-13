@@ -1,8 +1,8 @@
-var util = require( '../util.js');
+var monitorManagerUtil = require( '../monitorManagerUtil.js');
 
 module.exports = function (azureContext) {
 
-    util.logFunctionExecution(azureContext, __dirname, true);
+    monitorManagerUtil.logFunctionExecution(azureContext, __dirname, true);
 
     azureContext.done();
     
