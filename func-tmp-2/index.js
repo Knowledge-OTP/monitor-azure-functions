@@ -1,4 +1,4 @@
-var AzureFuncMonitorManager = require('./AzureFuncMonitorManager.js');
+var AzureFuncMonitorManager = require('./azureFuncMonitorManager.js');
 
 module.exports = function (azureContext) {
 
