@@ -6,19 +6,21 @@ var Monitoring = function () {
 
 Monitoring.prototype.log = function (functionName,invokedTime,isSuceess){
 
-    var nowTime = new Date().getTime(); 
-
-    var minutesFromLastInvoke = (nowTime - invokedTime);
     this.monitorData[functionName] = {
         function_name: functionName,
         last_invoke: invokedTime,
-        suceess: isSuceess,
-        minutesFromLastInvoke: minutesFromLastInvoke,
-        nowTime: nowTime
+        suceess: isSuceess
     }
 }
 
 Monitoring.prototype.get = function (){
+    
+    var nowTime = new Date().getTime();
+    for(var functionName in this.monitorData) {
+        var minutesFromLastInvoke = (nowTime - this.monitorData[functionName].last_invoke)/1000/60;
+        this.monitorData[functionName].monitorTime= nowTime;
+        this.monitorData[functionName].minutesFromLastInvoke=minutesFromLastInvoke;
+    }
     return (this.monitorData);
 }
 
