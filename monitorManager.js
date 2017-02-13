@@ -45,9 +45,8 @@ var MonitorManager = function(){
     if (_monitorManager){
         _monitorManager = new Monitoring();
     }
-    else{
-        return _monitorManager;
-    }
+    return _monitorManager;
+    
     
 };
 
