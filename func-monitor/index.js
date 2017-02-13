@@ -1,21 +1,13 @@
-var MonitorManager = require('../monitorManager.js');
-const path = require('path');
+var util = require( '../util.js');
 
 module.exports = function (azureContext, data) {
-
-    var timeStamp = new Date().toISOString();
-    var monitorManager = MonitorManager();   
-    var functionName = path.basename(__dirname);
-
-    azureContext.log(functionName + ' was triggered !!!');
-    
 	
     azureContext.log('Getting monitor data');
-    var msg = monitorManager.get();
-    monitorManager.log(functionName,timeStamp, true);
+    var monitorData = monitorManager.get();
+    util.logFunctionExecution(azureContext, __dirname, true);
     azureContext.res = {
         status: 200,
-        body: msg
+        body: monitorData
     }; 
     
     azureContext.done();
