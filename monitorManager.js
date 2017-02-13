@@ -5,10 +5,14 @@ var Monitoring = function () {
 };
 
 Monitoring.prototype.log = function (functionName,invokedTime,isSuceess){
+
+    var nowTime = new Date().getTime(); 
+    var minutesFromLastInvoke = (nowTime - invokedTime)/1000/60;
     this.monitorData[functionName] = {
         function_name: functionName,
         last_invoke: invokedTime,
-        suceess: isSuceess
+        suceess: isSuceess,
+        minutesFromLastInvoke: minutesFromLastInvoke
     }
 }
 

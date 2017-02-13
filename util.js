@@ -1,4 +1,4 @@
-var MonitorManager = require('monitorManager.js');
+var MonitorManager = require('./monitorManager.js');
 const path = require('path');
 
 var logFunctionExecution = function(azureContext, dirname, isSucess){
