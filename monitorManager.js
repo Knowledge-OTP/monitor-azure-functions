@@ -36,7 +36,7 @@ MonitorManager.prototype.log = function (functionName,invokedTime,isSuceess){
 }
 
 MonitorManager.prototype.get = function (){
-    retrun (JSON.stringify(this.monitorData[functionName]));
+    return (JSON.stringify(this.monitorData[functionName]));
 }
 
 module.exports = MonitorManager;
