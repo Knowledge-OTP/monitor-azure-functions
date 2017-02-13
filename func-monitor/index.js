@@ -13,7 +13,7 @@ module.exports = function (azureContext, data) {
 		azureContext.log('name is in data');
 		var msg = monitorManager.get();
         azureContext.res = {
-            body: { 'status: ' + msg }
+            body: { status: 'msg:' + msg }
         };
     }
     else {
@@ -26,5 +26,3 @@ module.exports = function (azureContext, data) {
     azureContext.done();
     
 };
-
-module.exports();
