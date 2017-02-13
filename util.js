@@ -1,7 +1,9 @@
 var MonitorManager = require('./monitorManager.js');
 const path = require('path');
 
-var logFunctionExecution = function(azureContext, dirname, isSucess){
+var util={};
+
+util.prototype.logFunctionExecution = function(azureContext, dirname, isSucess){
 	
 	var timeStamp = new Date().toISOString();
     var monitorManager = MonitorManager();   
@@ -11,4 +13,4 @@ var logFunctionExecution = function(azureContext, dirname, isSucess){
     monitorManager.log(functionName,timeStamp, isSucess);
 }
 
-module.exports = logFunctionExecution;
+module.exports = util;
