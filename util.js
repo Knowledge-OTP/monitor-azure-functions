@@ -10,3 +10,5 @@ var logFunctionExecution = function(azureContext, dirname, isSucess){
     azureContext.log(functionName + ' was triggered !!!');
     monitorManager.log(functionName,timeStamp, isSucess);
 }
+
+module.exports = logFunctionExecution;
