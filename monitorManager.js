@@ -1,28 +1,3 @@
-// var _customLogger;
-
-// var CustomLogger = function (info, error) {
-//     this.error = error || console.error;
-//     this.info = info || console.log;
-// };
-
-// CustomLogger.prototype.error = function (msg) {
-//     this.error(msg);
-// };
-
-// CustomLogger.prototype.info = function (msg) {
-//     this.info(msg)
-// };
-
-
-// function logger(error, info, newInstance){
-//     if(!_customLogger && !newInstance) {
-//         _customLogger = new CustomLogger(error,info);
-//         return _customLogger;
-//     } else {
-//         return _customLogger;
-//     }
-// }
-
 var _monitorManager;
 
 var Monitoring = function () {
@@ -41,13 +16,11 @@ Monitoring.prototype.get = function (){
     return (JSON.stringify(this.monitorData));
 }
 
-var MonitorManager = function(){
-    if (_monitorManager){
+var monitorManager = function(){
+    if (!_monitorManager){
         _monitorManager = new Monitoring();
     }
-    return _monitorManager;
-    
-    
+    return _monitorManager; 
 };
 
-module.exports = MonitorManager;
+module.exports = monitorManager;
