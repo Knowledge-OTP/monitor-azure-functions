@@ -5,15 +5,17 @@ module.exports = function (azureContext, data) {
     var timeStamp = new Date().toISOString();
     var monitorManager = MonitorManager();
    
-    azureContext.log(JSON.stringify(azureContext));
+    azureContext.log('dir name=' + __dirname);
     azureContext.log('func-monitor was triggered !!!');
     monitorManager.log('func-monitor',timeStamp, true);
 
 	if('name' in data ) {
 		azureContext.log('name is in data');
+        azureContext.log('Getting monitor data');
 		var msg = monitorManager.get();
         azureContext.res = {
-            body: { status: 'msg:' + msg }
+            status: 200,
+            body: msg
         };
     }
     else {
