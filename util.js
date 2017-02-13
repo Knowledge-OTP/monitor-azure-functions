@@ -5,7 +5,7 @@ var util={};
 
 util.prototype.logFunctionExecution = function(azureContext, dirname, isSucess){
 	
-	var timeStamp = new Date().toISOString();
+	var timeStamp = new Date().getTime();
     var monitorManager = MonitorManager();   
     var functionName = path.basename(dirname);
 
